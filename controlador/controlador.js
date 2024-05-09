@@ -115,3 +115,24 @@ function mostrarProductos() {
     }
   });
 }
+
+function mostrarDetalleProducto() {
+  //recuperar la PK
+  const pk = this.getAttribute("data-id"); 
+  //buscar en la lista de productos
+  data = {"id": pk}
+  producto.consultarUnProducto(data, function (res) {
+    if (res.success) {
+      //desplegar el template
+      vista.mostrarPlantilla("contenidoDetallesProductos", "areaDeTrabajo");
+      //mostrar datos del producto
+      
+      vista.presentarUnProducto("areaDeTrabajo", res.data[0]); 
+    } else {
+      vista.mostrarMensaje(
+        false,
+        "Error al realizar la consulta en la base de datos"
+      );
+    }
+  });
+}

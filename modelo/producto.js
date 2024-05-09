@@ -40,4 +40,10 @@ class Producto extends Connect{
         const method = 'GET';
         this.connect(dataReq, endpoint, method, loginCallback);
     }  
+
+    consultarUnProducto(dataReq, loginCallback){
+        const endpoint = 'productos/' + dataReq.id;
+        const method = 'GET';
+        this.connect(dataReq, endpoint, method, loginCallback);
+    }  
 }
