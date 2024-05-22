@@ -23,6 +23,27 @@
 
     <!--CONTENIDO-->
     <div id="areaDeTrabajo">
+      <h1 id="TextoIniciarSesion">Iniciar sesión</h1>
+      <div id="contenedor-Ingreso">
+            <img src="./vista/img/person-circle.svg" alt="logo" class="icons" />
+        <form id="formularioIniciarSesion">
+          <div class="justify-content-center">
+            <label for="correo_electronico" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="correo_electronico" name="correo"
+              placeholder="name@example.com" />
+          </div>
+          <div class="">
+            <label for="contrasenia" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="contrasenia" name="contrasenia"
+              placeholder="Ingrese su contraseña" />
+          </div>
+        </form>
+        <button type="button" class="btn btn-outline-warning">¿Olvidaste tu contraseña?</button>
+          <button type="button" id="botonesInicarSesion" class="btn btn-outline-success"
+            onclick="iniciarSesion()">Ingresar</button>
+          <button type="button" id="botonesInicarSesion" class="btn btn-outline-warning"
+            onclick="mostrarPantallaBienvenida()">Regresar</button>
+      </div>
     </div>
     <!--PIEDEPAGINA-->
     <div class="row" id="pieDePagina">
@@ -47,10 +68,7 @@
       </footer>-->
     </div>
 
-
-
     <!-- TEMPLATES PRINCIPALES-->
-
 
     <!--vista de bievenida, inicio sesion, registro "Header"-->
     <template id="encabezado1">
@@ -63,14 +81,10 @@
     <template id="bienvenidaUsuario">
       <div class="row contenido">
         <div id="contenedor-bienvenida">
-          <div class="col-3 offset-0">
-            <img src="./vista/img/img.jpg" alt="logo" id="foto-bienvenida" />
-          </div>
-
+            <img src="./assets/img/anis1.jpg" alt="logo" id="foto-bienvenida" />
           <h1 id="mensajeBievenida">¡Hola!</h1>
           <h6 id="mensajeBievenida">¡Sazonamos tus momentos con el toque perfecto!</h6>
           <h6 id="mensajeBievenida">Especias de calidad, sabores inolvidables.</h6>
-
           <div class="col-12">
             <button type="button" class="btn-bienvenida btn-outline-success" onclick="mostrarPantallaIncicioSesion()">
               Iniciar sesion
@@ -89,37 +103,24 @@
     <template id="formIniciarSesion">
       <h1 id="TextoIniciarSesion">Iniciar sesión</h1>
       <div id="contenedor-Ingreso">
-        <div class="col-3 offset-4">
-          <img src="./vista/img/person-circle.svg" alt="logo" width="80px" height="80px" style="color: #141e46"
-            class="d-flex justify-content-center 100%" />
-        </div>
-
+            <img src="./vista/img/person-circle.svg" alt="logo" class="icons" />
         <form id="formularioIniciarSesion">
           <div class="justify-content-center">
             <label for="correo_electronico" class="form-label">Correo electrónico</label>
             <input type="email" class="form-control" id="correo_electronico" name="correo"
               placeholder="name@example.com" />
           </div>
-
           <div class="">
             <label for="contrasenia" class="form-label">Contraseña</label>
             <input type="password" class="form-control" id="contrasenia" name="contrasenia"
               placeholder="Ingrese su contraseña" />
           </div>
         </form>
-
-        <button>
-          <h5 style="color: #141e46">¿Olvidaste tu contraseña?</h5>
-        </button>
-        <div class="">
+        <button type="button" class="btn btn-outline-warning">¿Olvidaste tu contraseña?</button>
           <button type="button" id="botonesInicarSesion" class="btn btn-outline-success"
             onclick="iniciarSesion()">Ingresar</button>
-        </div>
-        <div class="">
           <button type="button" id="botonesInicarSesion" class="btn btn-outline-warning"
             onclick="mostrarPantallaBienvenida()">Regresar</button>
-        </div>
-
       </div>
     </template>
 
@@ -507,27 +508,22 @@
 
       </div>
     </template>
-
     <!--vista de Ayuda con mi pedido "Header"  -->
     <template id="headerAyudaPedido">
       <div class="col-auto" id="encabezado">
         <img src="./vista/img/Right.svg" alt="">
         <p>Ayuda con mi pedido</p>
-
       </div>
     </template>
-
     <!--vista de apartado de ayuda "Contenido" -->
     <template id="contendioFormularioAyuda">
       <div id="ayuda">
         <p> ¿necesitas ayuda?</p>
       </div>
-
       <div class="boton">
         <button type="button" class="btn btn-outline-primary   btn-ayuda"><img src="./vista/img/Vector(1).svg" alt=""
             id="btn1">preguntas frecuentes <img src="./vista/img/_.svg" alt="" id="btn2">
         </button>
-
         <button type="button" class="btn btn-outline-primary btn-ayuda"><img src="./vista/img/Vector(1).svg" alt=""
             id="btn1">Whatsapp <img src="./vista/img/_.svg" alt="" id="btn2">
         </button>
@@ -536,34 +532,28 @@
         </button>
       </div>
     </template>
-
     <!--vista  de preguntas frecuentes "Contenido" -->
     <template id="contenidoPreguntasFrecuentes">
-
       <div class="mb-3">
         <button type="button" class="btn btn-outline-primary">Ayuda con mi pedido <img src="./vista/img/_(1).svg"
             alt="">
         </button>
       </div>
-
       <div class="mb-3">
         <button type="button" class="btn btn-outline-primary">Mi cuenta <img src="./vista/img/_(1).svg" alt="">
         </button>
       </div>
-
       <div class="mb-3">
         <button type="button" class="btn btn-outline-primary">Pagos y facturacion <img src="./vista/img/_(1).svg"
             alt="">
         </button>
       </div>
-
       <div class="mb-3">
         <button type="button" class="btn btn-outline-primary">Terminos y condiciones <img src="./vista/img/_(1).svg"
             alt="">
         </button>
       </div>
     </template>
-
     <!--vista de Ayuda con mi pedido "Contenido"  -->
     <template id="contenidoAyudaPedido">
       <div class="mb-3">
@@ -572,28 +562,23 @@
           <br> <img src="./vista/img/_(1).svg" alt="">
         </button>
       </div>
-
       <div class="mb-3">
-
         <button type="button" id="BotonesAyuda" class="btn btn-outline-primary">¿ Etiam facilisis erat ut vulputate
           rutrum?<img src="./vista/img/_(1).svg" alt="">
         </button>
       </div>
-
       <div class="mb-3">
         <button type="button" id="BotonesAyuda" class="btn btn-outline-primary">¿ Etiam facilisis erat ut vulputate
           rutrum?<img src="./vista/img/_(1).svg" alt="">
         </button>
       </div>
     </template>
-
     <!--vista de apartado de ayuda, preguntas frecuentes "Footer" -->
     <template id="footerAyuda">
       <footer>
         <img src="./vista/img/logo_-removebg-preview.png" alt="Logo" id="img-logo-footer">
       </footer>
     </template>
-    
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./vista/vista.js/vista.js"></script>
     <script src="./modelo/connect.js"></script>
@@ -604,9 +589,6 @@
     <!--PRODUCTOS DE HEIDER-->
     <script src="./modelo/menu.js"></script>
     <script src="./modelo/main.js"></script>
-    
     <script src="./controlador/controlador.js"></script>
-    
 </body>
-
 </html>
