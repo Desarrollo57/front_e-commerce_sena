@@ -1,7 +1,11 @@
 vista = new Vista();
 let user = new User();
+let carrito = new Carrito();
 let producto = new Producto();
 let listaProductos = [];
+let productosEnCarrito = [];
+let total = [];
+
 /**
  *  Se ejecuta al inicar
  */
@@ -37,7 +41,10 @@ function iniciarSesion() {
           let reg = res.data[0];
           reg.correo = data.correo;
           user.setData(reg);
-          vista.mostrarPlantilla("headerProductosCarrito","contenedorEncabezado");
+          vista.mostrarPlantilla(
+            "headerProductosCarrito",
+            "contenedorEncabezado"
+          );
           vista.mostrarPlantilla("contenidoProducto", "areaDeTrabajo");
           mostrarProductos();
         }
@@ -65,13 +72,10 @@ function registrarUsuario() {
         vista.mostrarPlantilla("encabezado1", "contenedorEncabezado");
         vista.mostrarPlantilla("formIniciarSesion", "areaDeTrabajo");
         vista.mostrarPlantilla("footer1", "pieDePagina");
-        alert("registro exxxitoso")
+        alert("registro exxxitoso");
         //vista.mostrarMensaje("registro ok")
       } else {
-        vista.mostrarMensaje(
-          false,
-          "Error al crear el usuario"
-        );
+        vista.mostrarMensaje(false, "Error al crear el usuario");
       }
     });
   }
@@ -84,7 +88,6 @@ function mostrarPantallaBienvenida() {
   vista.mostrarPlantilla("footer1", "pieDePagina");
 }
 
-
 /**detalleproducto */
 function mostrarPantallaDetallesProducto() {
   vista.mostrarPlantilla("headerProductos", "contenedorEncabezado");
@@ -92,11 +95,65 @@ function mostrarPantallaDetallesProducto() {
   /*vista.mostrarPlantilla( "pieDePagina");*/
 }
 /**agregarcarrito */
+/**
+ * Agrega un producto al carro si no existe, si ya existe suma 1
+ */
+function actualizarCarro() {
 
-function mostrarPantallaCarrito() {
-  vista.mostrarPlantilla("headerProductos", "contenedorEncabezado");
+  //Consultar el carro en la BD
+  consultarCarro();
+  //Recuperar id del producto
+  let idProducto = parseInt(this.getAttribute("data-id"));
+  //Buscar producto en listaProductos
+  const producto = listaProductos.find((x) => x.id_prod === idProducto); // encuentra el producto segun el id
+  const prodEnCarro = productosEnCarrito.find((x) => x.id_prod === idProducto);
+  if (prodEnCarro) {
+    //SI si existe, agregar una unidad
+    carrito.sumarProducto(prodEnCarro, function (data) {
+      console.log(data);
+    });
+  } else {
+    //SI no existe en carrito Agregarlo al carrito
+    data = {
+      id_clien: user.id_clien,
+      id_prod: producto.id_prod,
+      precio: producto.precio_venta,
+    };
+    carrito.crearProducto(data, function (data) {
+      console.log(data);
+    });
+    //productosEnCarrito.push
+  }
   vista.mostrarPlantilla("contenidoCarritoCompra", "areaDeTrabajo");
-  vista.limpiarArea( "pieDePagina");
+  consultarCarro();
+  //vista.presentarProductoCarrito("carrito-productos", productosEnCarrito);
+  
+}
+
+
+/**
+ * Trae de la BD los articulos en el carrito, pzr el cliente activo 
+ */
+function consultarCarro() {
+  //capturar el id
+  id = user.id_clien;
+
+
+  carrito.getCarrito(id,  function (res) {
+    console.log(res);
+    if (res.success) {
+      productosEnCarrito = res.data;
+      vista.presentarProductoCarrito("carrito-productos", productosEnCarrito);
+      // consultar la BD si esta el producto
+    } else {
+      vista.mostrarMensaje(
+        false,
+        "Error al realizar la consulta en la base de datos"
+      );
+    }
+  });
+  //Carga en lista productosEnCarrito
+  //Desplegar datos del carrito
 }
 
 /** Navegacion de boton Regresar  de vista detalles productos  para vista Productos */
@@ -106,13 +163,9 @@ function regresarPantallaProducto() {
   vista.mostrarPlantilla("contenidoProducto", "areaDeTrabajo");
 }
 
-/*function mostrarPantallaCarrito1() {
-  vista.mostrarPlantilla("headerProductos", "contenedorEncabezado");
-  vista.mostrarPlantilla("contenidoCarritoCompra", "areaDeTrabajo");
-}*/
-
-function seguirComprando(){
+function seguirComprando() {
   vista.mostrarPlantilla("contenidoProducto", "areaDeTrabajo");
+  mostrarProductos();
 }
 
 //******************* PRODUCTOS ************************************* */
@@ -121,6 +174,7 @@ function mostrarProductos() {
   data = {};
   producto.consultarProductos(data, function (res) {
     if (res.success) {
+      listaProductos = res.data;
       vista.presentarProductos("contenedor-tarjetas", res.data);
     } else {
       vista.mostrarMensaje(
@@ -151,3 +205,10 @@ function mostrarDetalleProducto() {
     }
   });
 }
+
+
+
+
+
+
+

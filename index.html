@@ -4,11 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CASAROMA</title>
+  <title>proyecto</title>
   <link rel="stylesheet" href="./vista/css/bootstrap.min.css" />
   <link rel="stylesheet" href="./vista/css/estilos.css" />
-<!--importando los iconos de bootstrap-->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 
 </head>
 
@@ -23,27 +22,6 @@
 
     <!--CONTENIDO-->
     <div id="areaDeTrabajo">
-      <h1 id="TextoIniciarSesion">Iniciar sesión</h1>
-      <div id="contenedor-Ingreso">
-            <img src="./vista/img/person-circle.svg" alt="logo" class="icons" />
-        <form id="formularioIniciarSesion">
-          <div class="justify-content-center">
-            <label for="correo_electronico" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="correo_electronico" name="correo"
-              placeholder="name@example.com" />
-          </div>
-          <div class="">
-            <label for="contrasenia" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="contrasenia" name="contrasenia"
-              placeholder="Ingrese su contraseña" />
-          </div>
-        </form>
-        <button type="button" class="btn btn-outline-warning">¿Olvidaste tu contraseña?</button>
-          <button type="button" id="botonesInicarSesion" class="btn btn-outline-success"
-            onclick="iniciarSesion()">Ingresar</button>
-          <button type="button" id="botonesInicarSesion" class="btn btn-outline-warning"
-            onclick="mostrarPantallaBienvenida()">Regresar</button>
-      </div>
     </div>
     <!--PIEDEPAGINA-->
     <div class="row" id="pieDePagina">
@@ -68,7 +46,10 @@
       </footer>-->
     </div>
 
+
+
     <!-- TEMPLATES PRINCIPALES-->
+
 
     <!--vista de bievenida, inicio sesion, registro "Header"-->
     <template id="encabezado1">
@@ -79,99 +60,66 @@
 
     <!--vista  de Bienvenida "Contenido" -->
     <template id="bienvenidaUsuario">
-      <div class="row contenido">
-        <div id="contenedor-bienvenida">
-            <img src="./assets/img/anis1.jpg" alt="logo" id="foto-bienvenida" />
-          <h1 id="mensajeBievenida">¡Hola!</h1>
-          <h6 id="mensajeBievenida">¡Sazonamos tus momentos con el toque perfecto!</h6>
-          <h6 id="mensajeBievenida">Especias de calidad, sabores inolvidables.</h6>
-          <div class="col-12">
-            <button type="button" class="btn-bienvenida btn-outline-success" onclick="mostrarPantallaIncicioSesion()">
-              Iniciar sesion
-            </button>
-          </div>
-          <div class="col-12">
-            <button type="button" class="btn-bienvenida btn-outline-primary" onclick="mostrarPantallaRegistrar()">
-              Registrate
-            </button>
+      <div id="container">
+        <div class="row contenido">
+          <div id="contenedor-bienvenida">
+            <div class="col-3 offset-0">
+              <img src="./vista/img/img.jpg" alt="logo" id="foto-bienvenida" />
+            </div>
+
+            <h1 id="mensajeBievenida">¡Hola!</h1>
+            <h6 id="mensajeBievenida">¡Sazonamos tus momentos con el toque perfecto!</h6>
+            <h6 id="mensajeBievenida">Especias de calidad, sabores inolvidables.</h6>
+
+            <div class="col-12">
+              <button type="button" class="btn-bienvenida btn-outline-success" onclick="mostrarPantallaIncicioSesion()">
+                Iniciar sesion
+              </button>
+            </div>
+            <div class="col-12">
+              <button type="button" class="btn-bienvenida btn-outline-primary" onclick="mostrarPantallaRegistrar()">
+                Registrate
+              </button>
+            </div>
           </div>
         </div>
       </div>
+
     </template>
 
     <!--vista de inicio sesion "Contenido"-->
     <template id="formIniciarSesion">
-      <h1 id="TextoIniciarSesion">Iniciar sesión</h1>
-      <div id="contenedor-Ingreso">
-            <img src="./vista/img/person-circle.svg" alt="logo" class="icons" />
-        <form id="formularioIniciarSesion">
-          <div class="justify-content-center">
-            <label for="correo_electronico" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="correo_electronico" name="correo"
-              placeholder="name@example.com" />
-          </div>
-          <div class="">
-            <label for="contrasenia" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="contrasenia" name="contrasenia"
-              placeholder="Ingrese su contraseña" />
-          </div>
-        </form>
-        <button type="button" class="btn btn-outline-warning">¿Olvidaste tu contraseña?</button>
-          <button type="button" id="botonesInicarSesion" class="btn btn-outline-success"
-            onclick="iniciarSesion()">Ingresar</button>
-          <button type="button" id="botonesInicarSesion" class="btn btn-outline-warning"
-            onclick="mostrarPantallaBienvenida()">Regresar</button>
-      </div>
-    </template>
-
-    <!--vista de Registro "Contenido"-->
-    <template id="registroUsuario">
-      <div class="row contenido">
-        <h1 id="TextoRegistar">Registro</h1>
-        <div id="contenedor-registro">
+      <div id="container">
+        <h1 id="TextoIniciarSesion">Iniciar sesión</h1>
+        <div id="contenedor-Ingreso">
           <div class="col-3 offset-4">
-            <img src="./vista/img/person-circle.svg" alt="logo" width="80px" height="80px" style="color: #141E46;"
-              class="d-flex justify-content-center 100%">
+            <img src="./vista/img/person-circle.svg" alt="logo" width="80px" height="80px" style="color: #141e46"
+              class="d-flex justify-content-center 100%" />
           </div>
 
-          <form id="formularioRegistro">
-            <div class="">
-              <label for="nombre_clien" class="form-label">Nombre Completo</label>
-              <input type="text" class="form-control" id="nombre_clien" name="nombre_clien" required
-                placeholder="Full_name">
-            </div>
-
-            <div class="">
-              <label for="razon_social" class="form-label">Usuario</label>
-              <input type="text" class="form-control" id="razon_social" name="razon_social" required
-                placeholder="User_name">
-            </div>
-
-            <div class="">
-              <label for="correo" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="correo" name="correo" required
-                placeholder="name@example.com">
-            </div>
-
-            <div class="">
-              <label for="numero_celular" class="form-label">Número celular</label>
-              <input type="tel" class="form-control" id="numero_celular" name="numero_celular" required
-                placeholder="310_______">
+          <form id="formularioIniciarSesion">
+            <div class="justify-content-center">
+              <label for="correo_electronico" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="correo_electronico" name="correo"
+                placeholder="name@example.com" />
             </div>
 
             <div class="">
               <label for="contrasenia" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="contrasenia" name="contrasenia" required
-                placeholder="Ingrese su contraseña">
+              <input type="password" class="form-control" id="contrasenia" name="contrasenia"
+                placeholder="Ingrese su contraseña" />
             </div>
-
           </form>
-          <div class="col-12">
-            <button type="button " id="botonesRegistrar" class="btn btn-outline-success"
-              onclick="registrarUsuario()">Registrarse</button>
+
+          <button>
+            <h5 style="color: #141e46">¿Olvidaste tu contraseña?</h5>
+          </button>
+          <div class="">
+            <button type="button" id="botonesInicarSesion" class="btn btn-outline-success"
+              onclick="iniciarSesion()">Ingresar</button>
           </div>
-          <div class="col-12">
-            <button type="button " id="botonesRegistrar" class="btn btn-outline-warning"
+          <div class="">
+            <button type="button" id="botonesInicarSesion" class="btn btn-outline-warning"
               onclick="mostrarPantallaBienvenida()">Regresar</button>
           </div>
 
@@ -179,126 +127,66 @@
       </div>
     </template>
 
-    <!--vista de  bievenida, inicio sesion, registro "Footer" -->
-    <template id="footer1">
-      <!--Pendiente Por Decidir-->
-      <!--<footer class="col-12">
-        <p>Tambien puedes utilizar las redes sociales</p>
+    <!--vista de Registro "Contenido"-->
+    <template id="registroUsuario">
+      <div id="container">
+        <div class="row contenido">
+          <h1 id="TextoRegistar">Registro</h1>
+          <div id="contenedor-registro">
+            <div class="col-3 offset-4">
+              <img src="./vista/img/person-circle.svg" alt="logo" width="80px" height="80px" style="color: #141E46;"
+                class="d-flex justify-content-center 100%">
+            </div>
 
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="icons"
-          viewBox="0 0 16 16">
-          <path
-            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="icons"
-          viewBox="0 0 16 16">
-          <path
-            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="icons"
-          viewBox="0 0 16 16">
-          <path
-            d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z" />
-        </svg>
-      </footer>-->
-    </template>
+            <form id="formularioRegistro">
+              <div class="">
+                <label for="nombre_clien" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" id="nombre_clien" name="nombre_clien" required
+                  placeholder="Full_name">
+              </div>
 
+              <div class="">
+                <label for="razon_social" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="razon_social" name="razon_social" required
+                  placeholder="User_name">
+              </div>
 
-    <!-- TEMPLATES PRODUCTOS-->
+              <div class="">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="correo" name="correo" required
+                  placeholder="name@example.com">
+              </div>
 
-    <!--vista de Productos, detalle de producto, carrito de compras "Header" -->
-    <!--
-   <template id="headerProductosCarrito">
+              <div class="">
+                <label for="numero_celular" class="form-label">Número celular</label>
+                <input type="tel" class="form-control" id="numero_celular" name="numero_celular" required
+                  placeholder="310_______">
+              </div>
 
-      <header class="header">
-        <nav class="navbar">
-          <label class="labe_hamburguesa" for="menu_hamburguesa">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="50px" fill="currentColor" class="menu"
-              viewBox="0 0 16 16">
-              <path
-                d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
-            </svg>
-          </label>
-          <input class="menu_hamburguesa" type="checkbox" id="menu_hamburguesa">
+              <div class="">
+                <label for="contrasenia" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="contrasenia" name="contrasenia" required
+                  placeholder="Ingrese su contraseña">
+              </div>
 
-          <ul class="ul_links">
-            <li class="li_links">
+            </form>
+            <div class="col-12">
+              <button type="button " id="botonesRegistrar" class="btn btn-outline-success"
+                onclick="registrarUsuario()">Registrarse</button>
+            </div>
+            <div class="col-12">
+              <button type="button " id="botonesRegistrar" class="btn btn-outline-warning"
+                onclick="mostrarPantallaBienvenida()">Regresar</button>
+            </div>
 
-              <a href="" class="link"> soporte</a>
-            </li>
-            <li class="li_links">
-              <a href="" class="link">politicas</a>
-            </li>
-            <li class="li_links">
-              <a href="" class="link">cerrar</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      <div id="imglogo">
-        <img src="./vista/img/logo_-removebg-preview.png" alt="logo" width="100px" height="100px">
-
+          </div>
+        </div>
       </div>
 
-      <img src="./vista/img/cart3.svg" alt="" width="16" height="16" class="devolver"
-        onclick="mostrarPantallaCarrito1()">
-
-    </template>-->
-    <!--ESto no hace nada, creo-->
-    <!--<template id="headerProductos">
-      <figure>
-        <header class="header">
-          <nav class="navbar">
-
-            <label class="labe_hamburguesa" for="menu_hamburguesa">
-              <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="50px" fill="currentColor" class="menu"
-                viewBox="0 0 16 16">
-                <path
-                  d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
-              </svg>
-            </label>
-            <input class="menu_hamburguesa" type="checkbox" id="menu_hamburguesa">
-
-            <ul class="ul_links">
-              <li class="li_links">
-
-                <a href="" class="link"> soporte</a>
-              </li>
-              <li class="li_links">
-                <a href="" class="link">politicas</a>
-              </li>
-              <li class="li_links">
-                <a href="" class="link">cerrar</a>
-              </li>
-            </ul>
-          </nav>
-        </header>
-
-        <div id="imglogo">
-          <img src="./vista/img/logo_-removebg-preview.png" alt="logo" width="100px" height="100px">
-
-        </div>
-
-        <img src="./vista/img/btn icono regreso(1).svg" alt="" width="16" height="16" class="devolver"
-          onclick="regresarPantallaProducto()">
-      </figure>
-    </template>-->
-
+    </template>
     <!--vista de prodoctos  "Contenido" -->
     <template id="contenidoProducto">
-      <!--<div class="cotenedor-botones">
-        <button class="btn-categ btn-molidos">Molidos</button>
-        <button class="btn-categ btn-hierbas">hierbas</button>
-        <button class="btn-categ btn-especias">Especias</button>
-      </div>
-      <section class="tajetas">
-        <h2>Productos destacados...</h2>
-        <div id="contenedor-tarjetas">
-
-        </div>
-      </section>-->
-      <!--Heyder productos-->
+      <!--productos-->
       <div class="wrapper">
         <header class="header-mobile">
           <h1 class="logo">Casaroma</h1>
@@ -332,10 +220,10 @@
                   Especias</button>
               </li>
               <li>
-                <a class="boton-menu boton-carrito" href="./carrito.html">
-                  <i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
+                <a class="boton-menu boton-carrito">
+                <i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
                 </a>
-              </li>
+                </li>
             </ul>
           </nav>
           <footer>
@@ -348,9 +236,9 @@
           <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
           <div id="contenedor-productos" class="contenedor-productos">
             <!-- Esto se va a rellenar con JS -->
-            <section class="tajetas">
+            <section class="tarjetas">
               <div id="contenedor-tarjetas">
-      
+
               </div>
             </section>
           </div>
@@ -358,15 +246,6 @@
       </div>
 
     </template>
-    <!--Terminan productos-->
-
-    <!--vista de productos "Footer" No se esta usando-->
-    <!--<template id="footerProducto">
-      <footer id="footerProducto1">
-        <p id="contenidoFooter">Obten 10% dto.</p>
-      </footer>
-    </template>-->
-    <!--footer sin uso-->
 
     <!--vista de detalles de producto "Contenido" -->
     <template id="contenidoDetallesProductos">
@@ -402,12 +281,6 @@
 
     <!--vista de carrito de compras "Contenido" -->
     <template id="contenidoCarritoCompra">
-
-      <!--YA NO ESTA EN USO <div class="user">
-        <p><img src="./vista/img/icono-user.svg" alt="">¡tu compra user @User!</p>
-      </div>-->
-      <!--Carrito antiguo-->
-
       <!--Nuevo Carrito de Heyder-->
       <section id="wrapper">
         <div class="wrapper">
@@ -427,12 +300,12 @@
             <nav>
               <ul>
                 <li>
-                  <a class="boton-menu boton-volver" href="" >
+                  <a class="boton-menu boton-volver" onclick="seguirComprando()">
                     <i class="bi bi-arrow-return-left"></i> Seguir comprando
                   </a>
                 </li>
                 <li>
-                  <a class="boton-menu boton-carrito active" href="./carrito.html">
+                  <a class="boton-menu boton-carrito active" onclick="actualizarCarro()">
                     <i class="bi bi-cart-fill"></i> Carrito
                   </a>
                 </li>
@@ -447,27 +320,23 @@
           <main>
             <h2 class="titulo-principal">Carrito</h2>
             <div class="contenedor-carrito">
-              <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío. <i class="bi bi-emoji-frown"></i></p>
-
-              <div id="carrito-productos" class="carrito-productos disabled">
+              <div id="carrito-productos" class="carrito-productos">
                 <!-- Esto se va a completar con el JS -->
               </div>
 
-              <div id="carrito-acciones" class="carrito-acciones disabled">
+              <div id="carrito-acciones" class="carrito-acciones">
                 <div class="carrito-acciones-izquierda">
                   <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
                 </div>
                 <div class="carrito-acciones-derecha">
                   <div class="carrito-acciones-total">
                     <p>Total:</p>
-                    <p id="total">$3000</p>
+                    <p id="total">$</p>
                   </div>
                   <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar ahora</button>
                 </div>
               </div>
 
-              <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por tu compra. <i
-                  class="bi bi-emoji-laughing"></i></p>
 
             </div>
           </main>
@@ -475,24 +344,7 @@
       </section>
       <!--Carrito de HEyder FINAL DE COMENTARIO-->
     </template>
-
-    <!--vista de detalles de producto "Footer" YA NO LO USAMOS -->
-    <!-- <template id="footerProductos">
-      <footer id="footerProducto" class="col-12">
-        <p class="aviso"> nombre de producto</p>
-        <p class="aviso2"> Descripción</p>
-        <div class="boton">
-          <p class="aviso"> 11$</p><button type="button" class="btn btn-warning"
-            onclick="mostrarPantallaCarrito()">Agregar al carrito</button>
-        </div>
-      </footer>
-    </template>-->
-
-
-
-
     <!-- TEMPLATES AYUDA-->
-
     <!--vista de apartado de ayuda, preguntas frecuentes "Header"-->
     <template id="headerayuda">
       <div class="">
@@ -508,22 +360,27 @@
 
       </div>
     </template>
+
     <!--vista de Ayuda con mi pedido "Header"  -->
     <template id="headerAyudaPedido">
       <div class="col-auto" id="encabezado">
         <img src="./vista/img/Right.svg" alt="">
         <p>Ayuda con mi pedido</p>
+
       </div>
     </template>
+
     <!--vista de apartado de ayuda "Contenido" -->
     <template id="contendioFormularioAyuda">
       <div id="ayuda">
         <p> ¿necesitas ayuda?</p>
       </div>
+
       <div class="boton">
         <button type="button" class="btn btn-outline-primary   btn-ayuda"><img src="./vista/img/Vector(1).svg" alt=""
             id="btn1">preguntas frecuentes <img src="./vista/img/_.svg" alt="" id="btn2">
         </button>
+
         <button type="button" class="btn btn-outline-primary btn-ayuda"><img src="./vista/img/Vector(1).svg" alt=""
             id="btn1">Whatsapp <img src="./vista/img/_.svg" alt="" id="btn2">
         </button>
@@ -532,28 +389,34 @@
         </button>
       </div>
     </template>
+
     <!--vista  de preguntas frecuentes "Contenido" -->
     <template id="contenidoPreguntasFrecuentes">
+
       <div class="mb-3">
         <button type="button" class="btn btn-outline-primary">Ayuda con mi pedido <img src="./vista/img/_(1).svg"
             alt="">
         </button>
       </div>
+
       <div class="mb-3">
         <button type="button" class="btn btn-outline-primary">Mi cuenta <img src="./vista/img/_(1).svg" alt="">
         </button>
       </div>
+
       <div class="mb-3">
         <button type="button" class="btn btn-outline-primary">Pagos y facturacion <img src="./vista/img/_(1).svg"
             alt="">
         </button>
       </div>
+
       <div class="mb-3">
         <button type="button" class="btn btn-outline-primary">Terminos y condiciones <img src="./vista/img/_(1).svg"
             alt="">
         </button>
       </div>
     </template>
+
     <!--vista de Ayuda con mi pedido "Contenido"  -->
     <template id="contenidoAyudaPedido">
       <div class="mb-3">
@@ -562,33 +425,40 @@
           <br> <img src="./vista/img/_(1).svg" alt="">
         </button>
       </div>
+
       <div class="mb-3">
+
         <button type="button" id="BotonesAyuda" class="btn btn-outline-primary">¿ Etiam facilisis erat ut vulputate
           rutrum?<img src="./vista/img/_(1).svg" alt="">
         </button>
       </div>
+
       <div class="mb-3">
         <button type="button" id="BotonesAyuda" class="btn btn-outline-primary">¿ Etiam facilisis erat ut vulputate
           rutrum?<img src="./vista/img/_(1).svg" alt="">
         </button>
       </div>
     </template>
+
     <!--vista de apartado de ayuda, preguntas frecuentes "Footer" -->
     <template id="footerAyuda">
       <footer>
         <img src="./vista/img/logo_-removebg-preview.png" alt="Logo" id="img-logo-footer">
       </footer>
     </template>
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./vista/vista.js/vista.js"></script>
     <script src="./modelo/connect.js"></script>
     <script src="./modelo/user.js"></script>
     <script src="./modelo/producto.js"></script>
     <script src="./modelo/carrito.js"></script>
-    <script type=""></script>
-    <!--PRODUCTOS DE HEIDER-->
-    <script src="./modelo/menu.js"></script>
-    <script src="./modelo/main.js"></script>
+
+
+
+
     <script src="./controlador/controlador.js"></script>
+
 </body>
+
 </html>
