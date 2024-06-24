@@ -2,11 +2,13 @@
 <html lang="es">
 
 <head>
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>proyecto</title>
   <link rel="stylesheet" href="./vista/css/bootstrap.min.css" />
   <link rel="stylesheet" href="./vista/css/estilos.css" />
+  
 
 
 </head>
@@ -176,7 +178,7 @@
             </div>
             <div class="col-12">
               <button type="button " id="botonesRegistrar" class="btn btn-outline-warning"
-                onclick="mostrarPantallaBienvenida()">Regresar</button>
+                onclick="mostrarPantallaIncicioSesion()">Ingresar</button>
             </div>
 
           </div>
@@ -226,10 +228,13 @@
                 </li>
             </ul>
           </nav>
-          <footer>
+          <footer> 
             <div class="texto-footer">
-              <p> ¿necesitas ayuda?</p>
+                <button type="button" id="botonesAyuda" onclick="mostrarPantallaAyuda()">
+                  <p> ¿necesitas ayuda?</p>
+                </button>
             </div>
+
           </footer>
         </aside>
         <main>
@@ -309,12 +314,12 @@
                     <i class="bi bi-cart-fill"></i> Carrito
                   </a>
                 </li>
-              </ul>
+              </ul> 
             </nav>
             <footer>
-              <div class="texto-footer">
+              <button type="button" id="botonesAyuda" onclick="mostrarPantallaAyuda()">
                 <p> ¿necesitas ayuda?</p>
-              </div>
+              </button>
             </footer>
           </aside>
           <main>
@@ -325,8 +330,8 @@
               </div>
 
               <div id="carrito-acciones" class="carrito-acciones">
-                <div class="carrito-acciones-izquierda">
-                  <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
+                <div id ="carrito-acciones-izquierda" class="carrito-acciones-izquierda">
+                  <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">vaciar carrito</button>
                 </div>
                 <div class="carrito-acciones-derecha">
                   <div class="carrito-acciones-total">
@@ -347,8 +352,18 @@
     <!-- TEMPLATES AYUDA-->
     <!--vista de apartado de ayuda, preguntas frecuentes "Header"-->
     <template id="headerayuda">
-      <div class="">
-        <img src="./vista/img/ayuda.jpg" alt="imagen" id="img-encabezado">
+      <div class="header-global" >
+        <div class="container">
+          <div class="innerContainer">
+            <div class="marca">
+              <img src="./vista/img/logo_-removebg-preview.png" width="89px" height="32px" alt="">
+              <p class="textoCentroAyuda">Centro ayuda</p>
+            </div>
+            <div class="acciones">
+              <button id="botonInciarSesionAyuda" onclick="mostrarPantallaIncicioSesion()">Cerrar Sesion </button>
+            </div>
+          </div>
+        </div>
       </div>
     </template>
 
@@ -372,22 +387,53 @@
 
     <!--vista de apartado de ayuda "Contenido" -->
     <template id="contendioFormularioAyuda">
-      <div id="ayuda">
-        <p> ¿necesitas ayuda?</p>
+      <div class="mainContainer">
+        <div class="containerBusqueda">
+          
+          <p id="TextoIniciarSesion"> ¿necesitas ayuda? </p>
+          <div class="contenedorInputBusqueda">
+          <input type="search" name="query" id="query" placeholder="Ejemplo: " autocomplete="off" aria-label="Search" aria-autocomplete="both" aria-expanded="false" role="combobox" aria-owns="a2081597-ce0d-4a9a-b4b2-1cbeb7fc15a5">
+          </div>
+        </div>
+        <div id="contenedorAyuda">
+
+          <div>
+            <h1 class="tituloPreguntasFrecuentes">
+              Preguntas Frecuentes
+            </h1>
+          </div>
+          <div class="tarjetasCategorias">
+              <div class="categorias">
+                <div class="nombreCategoria">
+                  <h4> Cuenta </h4>
+                </div>
+              </div>
+              <div class="subcategorias"></div>
+          </div>
+
+          <div class="tarjetasCategorias">
+            <div class="categorias">
+              <div class="nombreCategoria">
+                <h4> Cuenta </h4>
+              </div>
+            </div>
+            <div class="subcategorias"></div>
+          </div>
+
+          <div class="tarjetasCategorias">
+            <div class="categorias">
+              <div class="nombreCategoria">
+                <h4> Cuenta </h4>
+              </div>
+            </div>
+            <div class="subcategorias"></div>
+          </div>
+          
+          </div>
+        </div>
+
       </div>
 
-      <div class="boton">
-        <button type="button" class="btn btn-outline-primary   btn-ayuda"><img src="./vista/img/Vector(1).svg" alt=""
-            id="btn1">preguntas frecuentes <img src="./vista/img/_.svg" alt="" id="btn2">
-        </button>
-
-        <button type="button" class="btn btn-outline-primary btn-ayuda"><img src="./vista/img/Vector(1).svg" alt=""
-            id="btn1">Whatsapp <img src="./vista/img/_.svg" alt="" id="btn2">
-        </button>
-        <button type="button" class="btn btn-outline-primary btn-ayuda"><img src="./vista/img/Vector(1).svg" alt=""
-            id="btn1">Atencion al cliente<img src="./vista/img/_.svg" alt="" id="btn2">
-        </button>
-      </div>
     </template>
 
     <!--vista  de preguntas frecuentes "Contenido" -->
@@ -446,19 +492,22 @@
         <img src="./vista/img/logo_-removebg-preview.png" alt="Logo" id="img-logo-footer">
       </footer>
     </template>
-
+    
+    
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./vista/vista.js/vista.js"></script>
     <script src="./modelo/connect.js"></script>
     <script src="./modelo/user.js"></script>
     <script src="./modelo/producto.js"></script>
     <script src="./modelo/carrito.js"></script>
-
-
-
-
     <script src="./controlador/controlador.js"></script>
-
+    
+    
+    
+    
+    
+    
+    
 </body>
-
+    
 </html>

@@ -126,10 +126,104 @@ footer {
 
 /** CSS de vista ayuda**/
 
-#img-encabezado {
-  width: 100%;
-  height: 70%;
+.header-global {
+ color: #000000;
+ background: #dfd7bf;
+ border-bottom: 1px solid rgba(128, 128, 128, .2);
 }
+
+
+.header-global .innerContainer {
+  position: relative;
+  height: 66px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.marca {
+  width: 230px;
+  height: 32px;
+}
+.header-global .marca {
+  display: flex;
+  flex-direction: row;
+  padding-right: 26px;
+}
+
+.header-global .marca .textoCentroAyuda {
+  font-size: 18px;
+  white-space: nowrap;
+  color: #000000;
+  padding-left: 30px;
+}
+
+.header-global .acciones {
+  height: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 0 0 16px;
+  justify-content: flex-end;
+
+}
+
+#botonInciarSesionAyuda{
+  color: #ffffff;
+  background: #141e46;
+  border-radius: 4px;
+}
+
+.containerBusqueda {
+  height: 250px;
+  padding: 45px;
+  text-align: center;
+  background-color: #ffffff;
+}
+.contenedorInputBusqueda {
+  position: relative;
+  width: 80%;
+  top: 10px;
+}
+
+
+#query {
+  border: 1px solid #d6e9f2;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #9b9b9b;
+    height: 40px;
+    padding-left: 40px;
+    padding-right: 20px;
+    -webkit-appearance: none;
+    width: 100%;
+} 
+
+.tituloPreguntasFrecuentes {
+  font-size: 24px;
+  margin: 20px 0px 10px;
+  text-align: center;
+}
+
+.tarjetasCategorias {
+  padding: 12px 12px 0;
+  border: 1px solid rgba(128, 128, 128, .4);
+  border-radius: 8px;
+  background: #fff;
+  width: 600px;
+  height: 160px;
+  margin: 16px auto;
+}
+
+.nombreCategoria {
+  display: flex;
+  padding: 6px 0 18px;
+  align-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, .2);
+}
+
+
+
 #img-logo-footer {
   width: 140px;
   height: 100px;
@@ -145,6 +239,12 @@ footer {
   display: flex;
   justify-content: center;
   margin: 30px 10px;
+}
+#contenedorAyuda {
+  background-color: #dfd7bf;
+  padding: 60px 100px;
+
+
 }
 .btn-ayuda {
   width: 80%;
@@ -258,11 +358,14 @@ h2 {
 /*BOTONES*/
 
 .btn-categ {
-  background-color: #ff6969;
+  display: flex;
+  justify-content: center;
+  background-color: #dfd7bf;
   border-radius: 5px;
+  width: 200px;
   padding: 10px;
-  color: #141e46;
-  margin-right: 20px;
+  color: #000;
+  margin: auto;
   font-family: "Germania One", system-ui;
   /*height: 40px;*/
 }

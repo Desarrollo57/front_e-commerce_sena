@@ -1,3 +1,4 @@
+
 vista = new Vista();
 let user = new User();
 let carrito = new Carrito();
@@ -6,12 +7,26 @@ let listaProductos = [];
 let productosEnCarrito = [];
 let total = [];
 
+
+
+
 /**
  *  Se ejecuta al inicar
  */
 window.addEventListener("load", function () {
   vista.mostrarPlantilla("bienvenidaUsuario", "areaDeTrabajo");
 });
+
+
+function eliminarProducto(boton) {
+  var idProd = boton.getAttribute("data-id");
+  let idxlista = listaProductos.findIndex(x => x.id_prod == idProd);
+  listaProductos.splice(idxlista, 1);
+  vista.presentarProductoCarrito("carrito-productos", productosEnCarrito);
+}
+   
+
+
 /**
  * Navegacion de boton de vista Bienvenida para vista Iniciar sesion
  */
@@ -70,15 +85,22 @@ function registrarUsuario() {
       console.log(res);
       if (res.success) {
         vista.mostrarPlantilla("encabezado1", "contenedorEncabezado");
-        vista.mostrarPlantilla("formIniciarSesion", "areaDeTrabajo");
+        vista.mostrarPlantilla("registroUsuario", "areaDeTrabajo");
         vista.mostrarPlantilla("footer1", "pieDePagina");
-        alert("registro exxxitoso");
-        //vista.mostrarMensaje("registro ok")
+        vista.mostrarMensaje(true, "Registrado Exitoso")
+        
       } else {
         vista.mostrarMensaje(false, "Error al crear el usuario");
       }
     });
   }
+}
+
+
+function mostrarPantallaAyuda() {
+  vista.mostrarPlantilla("headerayuda","contenedorEncabezado");
+  vista.mostrarPlantilla("contendioFormularioAyuda","areaDeTrabajo");
+  vista.mostrarPlantilla("footerAyuda","pieDePagina");
 }
 
 /** Navegacion de boton Regresar  de vista Iniciar sesion para vista Bienvenida */
@@ -107,14 +129,26 @@ function actualizarCarro() {
   //Buscar producto en listaProductos
   const producto = listaProductos.find((x) => x.id_prod === idProducto); // encuentra el producto segun el id
   const prodEnCarro = productosEnCarrito.find((x) => x.id_prod === idProducto);
+  
   if (prodEnCarro) {
     //SI si existe, agregar una unidad
     carrito.sumarProducto(prodEnCarro, function (data) {
       console.log(data);
+      if (x.id_prod === idProducto.id_prod){
+        x.cantidad++;
+        return x;
+
+      }else{
+        return x;
+      }
     });
+
+
+    
   } else {
     //SI no existe en carrito Agregarlo al carrito
     data = {
+      cantidad: carrito.cantidad,
       id_clien: user.id_clien,
       id_prod: producto.id_prod,
       precio: producto.precio_venta,
@@ -205,10 +239,50 @@ function mostrarDetalleProducto() {
     }
   });
 }
+/*
+cargarEvenListeners()
+function cargarEvenListeners(){
+  
+  window.addEventListener("click", () => {
+
+    productosEnCarrito = [];
+
+    limpiarArea(areaDeTrabajo);
+  });
+}
+*/
+
+window.addEventListener("click", vaciar);
+console.log("vaciar")
+function vaciar (){
+
+  document.getElementById("carrito-acciones-vaciar");
+}
+
+
+const botonVaciar = document.querySelector("#carrito-acciones-vaciar");
+if ( botonVaciar)
+  
+  {
+    botonVaciar.addEventListener("click", () => {
+  
+    })
+  }
 
 
 
 
+
+
+/*
+window.addEventListener("DOMContentLoaded", (event) => {
+  const botonVaciar = document.getElementById('#carrito-acciones-vaciar');
+  if (botonVaciar) {
+    botonVaciar.addEventListener('click', swapper, false);
+  }
+});
+
+*/
 
 
 
